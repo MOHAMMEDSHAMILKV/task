@@ -1,0 +1,94 @@
+
+
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar-->
+    <div class="border-end bg-white" id="sidebar-wrapper">
+        <!-- <div class="sidebar-heading border-bottom bg-dark">DASHBOARD</div> -->
+        <!-- <h1>Dashboard</h1> -->
+        <div class="list-group list-group-flush">
+            <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Dashboard</a>
+            <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="adduser">Add Users</a>
+            <!-- <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a> -->
+            
+        </div>
+    </div>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+        <!-- Top navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container-fluid">
+              
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                      <button type="button" class="btn btn-dark" data-mdb-ripple-color="light" (click)="logout()">Logout</button>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container-fluid">
+          <div class="container">
+            <h2 id="title">User Informations</h2>
+            <table class="table" >
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">USER NAME</th>
+                    <th scope="col">DOB</th>
+                    <th scope="col">SEX</th>
+                    <th scope="col">CONTACT NO</th>
+                    <th >action</th>
+                  </tr>
+                  <tr *ngIf="data.length < 1">
+                    <td colspan="5">No places added</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let l of data; index as i ">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{l.id}}</td>
+                    <td>{{l.username}}</td>
+                    <td>{{l.dob}}</td>
+                    <td>{{l.gender}}</td>
+                    <td>{{l.contactno}}</td>
+                    <td colspan="2"><button class="btn" (click)="onDelete(i)"><img src="https://img.icons8.com/material-sharp/24/null/filled-trash.png"/></button></td>
+                    <td ><button class="btn" (click)="onEdit(i)"><img src="\assets\icons8-edit.svg"/></button></td>
+        
+                  </tr>
+                 
+                </tbody>
+              </table>
+        </div>
+       <div class="container" id="editform" *ngIf="showinput==true">
+  <h2>Edit Item</h2>
+  <form >
+    <label for="id">ID:</label>
+    <input type="text"  class="form-control" id="id" [(ngModel)]="id"><br>
+    <label for="username">Username:</label>
+    <input type="text"  class="form-control" id="username" [(ngModel)]="user"><br>
+    <label for="dob">DOB:</label>
+    <input type="date"  class="form-control" id="dob" [(ngModel)]="dob"><br>
+    <label for="gender">Gender:</label>
+    <input type="text" id="gender" [(ngModel)]="gender"><br>
+    <label for="contactno">Contact No:</label>
+    <input type="text"  class="form-control" id="contactno" [(ngModel)]="contactno"><br>
+    <button type="button"  (click)="submitEditForm()">Save</button>
+    <button type="button" (click)="cancelEdit()">Cancel</button>
+  </form>
+</div>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+
+
+
+

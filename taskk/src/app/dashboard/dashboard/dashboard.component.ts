@@ -9,7 +9,7 @@ import { LoginComponent } from 'src/app/login/login/login.component';
 })
 export class DashboardComponent {
 data:any
-data1:any
+// data1:any
 id:any
 user:any
 dob:any
@@ -17,7 +17,7 @@ gender:any
 contactno:any
 showinput=false  
 editedItem: any = {}; 
-Save: any;
+// Save: any;
   constructor(private Rt:Router){}
 navigateTo(route:any){
   this.Rt.navigate([`/${route}`])
@@ -48,7 +48,7 @@ ngOnInit(): void {
   }
   submitEditForm() {
    // Find the index of the edited item in the data array
-   var index = this.data.findIndex((item: { id: any; }) => item.id === this.editedItem.id);
+   var index = this.data.findIndex((item: { id: any; }) => item.id == this.editedItem.id);
    // Update the item in the data array
    this.data[index] = this.editedItem;
    // Update the data in localStorage

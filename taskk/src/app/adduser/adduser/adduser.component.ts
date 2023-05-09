@@ -20,6 +20,7 @@ navigateTo(route:any){
 }
 
 
+
 submit(){
   this.data =JSON.parse(localStorage.getItem('data')||'[]')
 

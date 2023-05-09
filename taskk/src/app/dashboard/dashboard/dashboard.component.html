@@ -6,7 +6,7 @@
         <!-- <div class="sidebar-heading border-bottom bg-dark">DASHBOARD</div> -->
         <!-- <h1>Dashboard</h1> -->
         <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="#!">Dashboard</a>
+            <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="dashboard">Dashboard</a>
             <a class="list-group-item list-group-item-action list-group-item-dark p-3" href="adduser">Add Users</a>
             <!-- <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
@@ -32,7 +32,7 @@
         <!-- Page content-->
         <div class="container-fluid">
           <div class="container">
-            <h2 id="title">User Informations</h2>
+            <h2 id="title">User Details</h2>
             <table class="table" >
                 <thead>
                   <tr>
@@ -68,15 +68,17 @@
   <h2>Edit Item</h2>
   <form >
     <label for="id">ID:</label>
-    <input type="text"  class="form-control" id="id" [(ngModel)]="id"><br>
+    <input type="text"  class="form-control" id="id" [(ngModel)]="id" name="id"><br>
     <label for="username">Username:</label>
-    <input type="text"  class="form-control" id="username" [(ngModel)]="user"><br>
+    <input type="text"  class="form-control" id="username" [(ngModel)]="user" name="user"><br>
     <label for="dob">DOB:</label>
-    <input type="date"  class="form-control" id="dob" [(ngModel)]="dob"><br>
-    <label for="gender">Gender:</label>
-    <input type="text" id="gender" [(ngModel)]="gender"><br>
+    <input type="date"  class="form-control" id="dob" [(ngModel)]="dob" name="dob"><br>
+    <label for="gender">Gender:</label><br>
+    <input type="radio" name="gender" value="male" [(ngModel)]="gender" name="gender"> Male
+    <input type="radio" name="gender" value="female" [(ngModel)]="gender" name="gender"> Female
+    <input type="radio" name="gender" value="others" [(ngModel)]="gender" name="gender"> others<br><br>
     <label for="contactno">Contact No:</label>
-    <input type="text"  class="form-control" id="contactno" [(ngModel)]="contactno"><br>
+    <input type="text"  class="form-control" id="contactno" [(ngModel)]="contactno" name="contactno"><br>
     <button type="button"  (click)="submitEditForm()">Save</button>
     <button type="button" (click)="cancelEdit()">Cancel</button>
   </form>
